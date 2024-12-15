@@ -21,7 +21,6 @@ app.use(express.static('public'));
 // Endpoint for handling chatbot requests
 app.post('/api/chat', async (req, res) => {
     const messages = req.body.messages;
-
     try {
         const response = await client.chat.completions.create({
             messages: messages,
