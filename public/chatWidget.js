@@ -160,7 +160,7 @@
     // Function to call OpenAI API with conversation history
     const fetchOpenAIResponse = async () => {
         try {
-            const response = await fetch(`${process.env.SERVER_URL}/api/chat`, {
+            const response = await fetch(`https://lms-chat-widget-izen.onrender.com/api/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
