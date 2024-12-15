@@ -18,6 +18,10 @@ app.use(express.urlencoded({
 app.use(cors());
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // Endpoint for handling chatbot requests
 app.post('/api/chat', async (req, res) => {
     const messages = req.body.messages;
