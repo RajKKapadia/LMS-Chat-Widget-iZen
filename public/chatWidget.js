@@ -112,7 +112,7 @@
     const sendBtn = document.getElementById('send-btn');
     const chatInput = document.getElementById('chat-input');
     const chatHistory = document.getElementById('chat-history');
-    const conversation = []; // To hold the chat history for API requests
+    let conversation = []; // To hold the chat history for API requests
 
     // Show chat widget when clicking chat icon
     chatIcon.addEventListener('click', function () {
@@ -169,6 +169,16 @@
                     messages: conversation, // Send the entire conversation history
                 }),
             });
+
+            // const response = await fetch(`http://127.0.0.1:5000/api/chat`, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({
+            //         messages: conversation, // Send the entire conversation history
+            //     }),
+            // });
 
             if (response.ok) {
                 const data = await response.json();
